@@ -1,0 +1,23 @@
+# node.js
+src
+
+# typescript
+tsconfig.build.json
+tsconfig.json
+
+# prettier
+.prettierignore
+.prettierrc
+
+# tslint
+tslint.json
+
+# jest
+jest.ci.json
+jest.json
+# istanbul
+coverage
+
+# typedoc
+typedoc.json
+docs
