@@ -1,5 +1,4 @@
-
 /**
  *
  */
-export type optionsType = {}
+export type optionsType = {};
