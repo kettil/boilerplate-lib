@@ -1,12 +1,12 @@
 // expand jest config for ci
 var jest = {
   // show every test case
-  verbose = true,
+  verbose: true,
 
   // enabled coverage
-  collectCoverage = true,
+  collectCoverage: true,
   // only text coverage
-  coverageReporters = ['text-summary', 'text'],
+  coverageReporters: ['text-summary', 'text'],
 };
 
 // export modified jest config
