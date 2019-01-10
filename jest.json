@@ -11,5 +11,13 @@
   "collectCoverageFrom": ["src/**/*.{ts,tsx,js,jsx}"],
   "coverageReporters": ["text", "lcov"],
   "coverageDirectory": "coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 85,
+      "functions": 85,
+      "lines": 85,
+      "statements": -5
+    }
+  },
   "modulePathIgnorePatterns": ["<rootDir>/build"]
 }
