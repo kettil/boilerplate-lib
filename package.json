@@ -15,7 +15,7 @@
     "build:generate": "tsc --project ./tsconfig.build.json",
     "lint": "npm run prettier && npm run lint:check",
     "lint:check": "tslint --project ./tsconfig.json --config ./tslint.json --format codeFrame",
-    "lint:ci": "tslint --project ./tsconfig.json --config ./tslint.json --format stylish",
+    "lint:ci": "tslint --project ./tsconfig.json --config ./tslint.json --format codeFrame",
     "prettier": "prettier --config './.prettierrc' --write '.prettierrc' './**/*.{ts,tsx,js,jsx,json,md,scss}'",
     "prettier:ci": "prettier --config './.prettierrc' --list-different '.prettierrc' './**/*.{ts,tsx,js,jsx,json,md,scss}'",
     "coverage": "npm run coverage:clean && npm run coverage:generate",
