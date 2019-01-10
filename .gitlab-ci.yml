@@ -1,0 +1,46 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  only:
+    - master
+    - merge_requests
+    - tags
+
+jest:
+  stage: test
+  script:
+    - npm run test:ci
+  coverage:
+    '/Statements\s*:\s*(\d+(?:\.\d+)?)%/'
+  only:
+    - master
+    - merge_requests
+    - tags
+
+prettier:
+  stage: test
+  script:
+    - npm run prettier:ci
+  only:
+    - master
+    - merge_requests
+    - tags
+
+lint:
+  stage: test
+  script:
+    - npm run lint:ci
+  only:
+    - master
+    - merge_requests
+    - tags
