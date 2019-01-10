@@ -6,7 +6,9 @@ var jest = {
   // enabled coverage
   collectCoverage: true,
   // only text coverage
-  coverageReporters: ['text-summary', 'text'],
+  coverageReporters: ['text-summary'],
+  // no output
+  coverageDirectory: '',
 };
 
 // export modified jest config
