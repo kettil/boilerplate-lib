@@ -10,4 +10,4 @@ var jest = {
 };
 
 // export modified jest config
-module.exports = Object.assign({}, require('./jest.js'), jest);
+module.exports = Object.assign({}, require('./jest.json'), jest);
