@@ -22,6 +22,15 @@ build:
     - merge_requests
     - tags
 
+audit:
+  stage: build
+  allow_failure: true
+  script:
+    - npm audit
+  only:
+    - master
+    - merge_requests
+
 jest:
   stage: test
 #  cache:
