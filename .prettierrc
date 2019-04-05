@@ -27,6 +27,12 @@
       "options": {
         "parser": "scss"
       }
+    },
+    {
+      "files": "*.yml",
+      "options": {
+        "parser": "yaml"
+      }
     }
   ]
 }
