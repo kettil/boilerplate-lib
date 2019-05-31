@@ -14,9 +14,9 @@ The following command is available:
 
 There are three types of tests:
 
-- unit tests
-- integration tests
-- functional tests
+- [Unit Tests](#-unit-tests)
+- [Integration Tests](#-integration-tests)
+- [Functional Tests](#-functional-tests)
 
 ### 🔬 Unit Tests
 
