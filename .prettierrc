@@ -11,7 +11,7 @@
   "parser": "typescript",
   "overrides": [
     {
-      "files": "{*.json,.prettierrc}",
+      "files": "{*.json,.prettierrc,.huskyrc}",
       "options": {
         "parser": "json"
       }
@@ -32,6 +32,12 @@
       "files": "*.yml",
       "options": {
         "parser": "yaml"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "html"
       }
     }
   ]
