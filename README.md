@@ -1,6 +1,6 @@
 # Boilerplate - Libs
 
-## Building
+## 🏗 Building
 
 Compile the library from TypeScript to JavaScript.
 
@@ -10,7 +10,7 @@ The following command is available:
 
   Builds the library
 
-## Tests
+## 🧪 Tests
 
 There are three types of tests:
 
@@ -18,7 +18,7 @@ There are three types of tests:
 - integration tests
 - functional tests
 
-### Unit Tests
+### 🔬 Unit Tests
 
 These tests have no dependencies outside the tested file (exception: class inheritance). All dependencies are mocked.
 
@@ -38,7 +38,7 @@ The following commands are available:
 
   Run all unit tests and creates a coverage report
 
-### Integration Tests
+### 🔭 Integration Tests
 
 These tests have no dependencies outside the project. All dependencies in the package.json file are mocked.
 Small libraries, e.g. lodash or luxon, don't need to be mocked.
@@ -59,7 +59,7 @@ The following commands are available:
 
   Run all integration tests and creates a coverage report
 
-### Functional Tests
+### 📡 Functional Tests
 
 These tests are performed with all dependencies. External services, e.g. MySQL, will/must be provided via docker.
 
@@ -81,7 +81,7 @@ The following commands are available:
 
   Run all functional tests and creates a coverage report
 
-## Prettier and Lint
+## 🖋 Prettier and Lint
 
 Ensures that the code is formatted uniformly and that the coding standards are adhered to.
 
@@ -95,7 +95,7 @@ The following commands are available:
 
   Checks if the lint rules are followed. It calls the prettier command first.
 
-## Docs
+## 📚 Docs
 
 Creates documentation from the comments in the source code.
 
