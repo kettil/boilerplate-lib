@@ -1,6 +1,6 @@
-import { optionsType } from './libs/types';
+import { optionsType } from './lib/types';
 
-export * from './libs/types';
+export * from './lib/types';
 
 /**
  *
