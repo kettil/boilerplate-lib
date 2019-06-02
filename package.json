@@ -34,7 +34,7 @@
     "docs": "npm run docs:clean && npm run docs:generate",
     "docs:clean": "rm -rf ./docs",
     "docs:generate": "typedoc --options './typedoc.json' './src'",
-    "docker:start": "docker-compose up -d && sleep 30",
+    "docker:start": "docker-compose up -d",
     "docker:stop": "docker-compose down -v",
     "version": "npm run build",
     "preversion": "npm run lint && test:all",
@@ -42,6 +42,7 @@
     "pretest:functional:watch": "npm run docker:start",
     "precoverage:generate:functional": "npm run docker:start",
     "postversion": "git push && git push --tags && npm publish",
+    "postdocker:start": "sleep 30",
     "posttest:functional": "npm run docker:stop",
     "posttest:functional:watch": "npm run docker:stop",
     "postcoverage:generate:functional": "npm run docker:stop"
