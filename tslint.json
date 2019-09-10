@@ -9,5 +9,10 @@
     "object-literal-sort-keys": false,
     "quotemark": [true, "single", "jsx-double"],
     "member-access": [true, "no-public"]
+    "variable-name": { 
+      "options": [
+        "ban-keywords",
+        "check-format",
+    },
   }
 }
