@@ -1,12 +1,6 @@
-import main from './index';
+import main from '.';
 
-/**
- *
- */
 describe('Check the function pagination()', () => {
-  /**
-   *
-   */
   test('call the main function', () => {
     const returnValue = main();
 
