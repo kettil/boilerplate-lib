@@ -15,7 +15,9 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -30,7 +32,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jest"],
   "rules": {
     "no-sequences": "error",
     "complexity": ["error", 15],
@@ -43,12 +45,14 @@
     "jsx-quotes": ["error", "prefer-double"],
     "quotes": "off",
     "arrow-body-style": ["error", "as-needed"],
+    "sort-keys": ["error", "asc", { "caseSensitive": false, "natural": true, "minKeys": 4 }],
     "camelcase": "error",
     "prefer-template": "error",
     "require-await": "off",
     "id-match": "error",
     "no-fallthrough": "error",
     "no-return-await": "error",
+    "eol-last": "error",
     "no-underscore-dangle": "error",
     "prefer-promise-reject-errors": "error",
     "padding-line-between-statements": [
@@ -88,11 +92,38 @@
     "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
     "@typescript-eslint/require-await": "error",
 
-    "unicorn/filename-case": ["error", { "cases": { "camelCase": true, "pascalCase": true } }],
+    "unicorn/filename-case": ["error", { "cases": "camelCase" }],
 
     "import/extensions": ["error", "never"],
 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.tsx"],
+      "excludedFiles": ["index.jsx", "index.tsx", "index.test.jsx", "index.test.tsx"],
+      "rules": {
+        "unicorn/filename-case": ["error", { "cases": "pascalCase" }]
+      }
+    },
+    {
+      "files": ["*.test.js", "*.test.jsx", "*.test.ts", "*.test.tsx"],
+      "env": {
+        "jest/globals": true
+      },
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-commented-out-tests": ["warn"],
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
+        "jest/lowercase-name": ["error"],
+        "jest/no-alias-methods": ["error"],
+        "jest/no-expect-resolves": "error"
+      }
+    }
+  ]
 }
