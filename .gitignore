@@ -4,8 +4,11 @@
 
 # node.js
 node_modules
-coverage
 docs
+
+# tools
+coverage
+.eslintcache
 
 # application
 build
