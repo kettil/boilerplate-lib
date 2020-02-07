@@ -2,7 +2,9 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ES2018",
-    "module": "ESNext",
+    "module": "CommonJS",
+    /* "target": "ES2020", */
+    /* "module": "ESNext", */
     "declaration": true,
     "outDir": "build",
     "lib": ["es6", "dom"],
