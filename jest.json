@@ -1,21 +1,28 @@
 {
   "globals": {
     "ts-jest": {
+      "tsConfig": "tsconfig.json",
       "diagnostics": {
         "warnOnly": true
       }
     }
   },
 
+  "moduleNameMapper": {
+    "\\.(eot|ttf|woff|woff2)$": "<rootDir>/src/__mocks__/fontMock.js",
+    "\\.(jpg|png|gif|svg)$": "<rootDir>/src/__mocks__/imageMock.js"
+  },
+
   "preset": "ts-jest",
   "testMatch": ["**/*.test.{js,jsx,ts,tsx}"],
-  "roots": ["<rootDir>/src/", "<rootDir>/tests/integration/", "<rootDir>/tests/functional/"],
+  "roots": ["<rootDir>/src/", "<rootDir>/tests/"],
 
+  "resetMocks": true,
   "clearMocks": true,
 
   "collectCoverageFrom": ["src/**/*.{ts,tsx,js,jsx}"],
-  "coveragePathIgnorePatterns": ["<rootDir>/src/crawlers"],
-  "coverageReporters": ["text-summary"],
+  "coveragePathIgnorePatterns": ["/__mocks__/"],
+  "coverageReporters": ["text-summary", "html"],
   "coverageDirectory": "coverage",
   "coverageThreshold": {
     "global": {
