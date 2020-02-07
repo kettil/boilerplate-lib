@@ -32,97 +32,151 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["#assets", "./src/assets"],
+          ["#components", "./src/components"],
+          ["#lib", "./src/lib"],
+          ["#modules", "./src/modules"],
+          ["#theme", "./src/theme"]
+        ],
+        "extensions": [".ts", ".tsx", ".json"]
+      }
+    }
+  },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "jest"],
   "rules": {
-    "no-sequences": "error",
-    "complexity": ["error", 15],
-    "no-eval": "error",
-    "no-implied-eval": "error",
-    "no-console": "error",
-    "linebreak-style": ["error", "unix"],
-    "no-irregular-whitespace": "error",
-    "quote-props": ["error", "as-needed"],
-    "jsx-quotes": ["error", "prefer-double"],
-    "quotes": "off",
     "arrow-body-style": ["error", "as-needed"],
-    "sort-keys": ["error", "asc", { "caseSensitive": false, "natural": true, "minKeys": 4 }],
     "camelcase": "error",
-    "prefer-template": "error",
-    "require-await": "off",
-    "id-match": "error",
-    "no-fallthrough": "error",
-    "no-return-await": "error",
+    "complexity": ["error", 15],
+    "consistent-return": "error",
+    "dot-notation": "error",
     "eol-last": "error",
+    "eqeqeq": ["error", "always"],
+    "function-paren-newline": "off",
+    "id-blacklist": ["error", "any", "Number", "number", "String", "string", "Boolean", "boolean", "Undefined"],
+    "id-match": "error",
+    "implicit-arrow-linebreak": "off",
+    "jsx-quotes": ["error", "prefer-double"],
+    "linebreak-style": ["error", "unix"],
+    "max-len": "off",
+    "no-console": "error",
+    "no-else-return": "error",
+    "no-eval": "error",
+    "no-fallthrough": "error",
+    "no-implied-eval": "error",
+    "no-irregular-whitespace": "error",
+    "no-return-await": "error",
+    "no-sequences": "error",
     "no-underscore-dangle": "error",
-    "prefer-promise-reject-errors": "error",
+    "no-unused-vars": "off",
+    "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
+    "operator-linebreak": ["error", "none", { "overrides": { "=": "after" } }],
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": "*", "next": ["return", "case", "block-like"] },
-      { "blankLine": "always", "prev": "block-like", "next": "*" },
-      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "always", "prev": ["block-like", "const", "let", "var"], "next": "*" },
       { "blankLine": "never", "prev": "import", "next": "import" },
       { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
     ],
-    "id-blacklist": [
-      "error",
-      "any",
-      "Number",
-      "number",
-      "String",
-      "string",
-      "Boolean",
-      "boolean",
-      "Undefined",
-      "undefined"
-    ],
+    "prefer-promise-reject-errors": "error",
+    "prefer-template": "error",
+    "quote-props": ["error", "as-needed"],
+    "quotes": "off",
+    "require-await": "off",
+    "yoda": ["error", "never", { "exceptRange": true, "onlyEquality": true }],
 
-    "@typescript-eslint/ban-ts-ignore": "error",
-    "@typescript-eslint/ban-ts-comment": "error",
-    "@typescript-eslint/ban-types": ["error", { "types": { "Object": "Use {} instead" } }],
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
     "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/ban-ts-ignore": "error",
+    "@typescript-eslint/ban-types": ["error", { "types": { "Object": "Use {} instead" } }],
+    "@typescript-eslint/class-name-casing": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "no-public" }],
+    "@typescript-eslint/interface-name-prefix": "error",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-this-alias": "error",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/prefer-nullish-coalescing": "error",
-    "@typescript-eslint/class-name-casing": "error",
-    "@typescript-eslint/interface-name-prefix": "error",
     "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
     "@typescript-eslint/require-await": "error",
 
-    "unicorn/filename-case": ["error", { "cases": "camelCase" }],
+    "unicorn/filename-case": ["error", { "case": "camelCase" }],
+    "unicorn/prevent-abbreviations": ["error", { "whitelist": { "props": true, "*Props": true } }],
 
-    "import/extensions": ["error", "never"],
+    "import/default": "error",
+    "import/extensions": ["error", "never", { "jpg": "always", "png": "always", "gif": "always", "svg": "always" }],
+    "import/no-anonymous-default-export": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }],
+    "import/no-unresolved": "error",
+    "import/no-unused-modules": ["error", { "unusedExports": true, "missingExports": true }],
+    "import/order": "error",
 
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error"
   },
   "overrides": [
     {
-      "files": ["*.jsx", "*.tsx"],
-      "excludedFiles": ["index.jsx", "index.tsx", "index.test.jsx", "index.test.tsx"],
+      "files": ["*.tsx"],
+      "excludedFiles": ["index.tsx", "index.test.tsx", "_app.tsx", "_document.tsx", "**/pages/**/*.tsx"],
       "rules": {
-        "unicorn/filename-case": ["error", { "cases": "pascalCase" }]
+        "unicorn/filename-case": ["error", { "case": "pascalCase" }]
       }
     },
     {
-      "files": ["*.test.js", "*.test.jsx", "*.test.ts", "*.test.tsx"],
-      "env": {
-        "jest/globals": true
-      },
+      "files": ["src/lib/types.ts", "**/pages/**/*.tsx"],
       "rules": {
-        "jest/no-disabled-tests": "warn",
+        "import/no-unused-modules": "off"
+      }
+    },
+    {
+      "files": ["**/actions/**/*.ts", "**/selectors/**/*.ts", "**/schemas/**/*.ts"],
+      "rules": {
+        "import/default": "off",
+        "import/no-default-export": "error",
+        "import/no-unused-modules": ["error", { "unusedExports": true, "missingExports": false }],
+        "import/prefer-default-export": "off"
+      }
+    },
+    {
+      "files": ["**/actions/**/*.ts", "**/reducers/**/*.ts"],
+      "rules": {
+        "import/no-cycle": "off"
+      }
+    },
+    {
+      "files": ["*.test.ts", "*.test.tsx"],
+      "env": { "jest/globals": true },
+      "rules": {
+        "import/default": "off",
+        "import/no-unused-modules": ["error", { "unusedExports": true, "missingExports": false }],
+
+        "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
+        "jest/lowercase-name": ["error"],
+        "jest/no-alias-methods": ["error"],
         "jest/no-commented-out-tests": ["warn"],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-expect-resolves": "error",
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error",
-        "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "test" }],
-        "jest/lowercase-name": ["error"],
-        "jest/no-alias-methods": ["error"],
-        "jest/no-expect-resolves": "error"
+        "jest/valid-title": "error"
+      }
+    },
+    {
+      "files": ["*.test.tsx"],
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "off"
       }
     }
   ]
