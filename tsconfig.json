@@ -26,6 +26,10 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true
+    
+    /* alias paths */
+    "baseUrl": ".",
+    "paths": {}
   },
   "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules", "build"]
