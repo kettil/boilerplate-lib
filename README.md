@@ -40,42 +40,13 @@ Compile the library from TypeScript to JavaScript.
 
 ## Tests
 
-There are three types of tests:
+- `npm run test`
 
-- **Unit Tests**
+  Run all tests
 
-  These tests have no dependencies outside the tested file (exception: class inheritance). All dependencies are mocked.
+- `npm run test:watch`
 
-  A test coverage of 100% should be achieved.
-
-- **Integration Tests**
-
-  These tests have no dependencies outside the project. All dependencies in the package.json file are mocked.
-  Small libraries, e.g. lodash or luxon, don't need to be mocked.
-
-  A test coverage between 50% and 75% should be achieved.
-
-- **Functional Tests**
-
-  These tests are performed with all dependencies and take a long time. External services, e.g. MySQL, will/must be provided via docker.
-
-  No dependency should be mocked.
-
-  A test coverage between 50% and 75% should be achieved.
-
-**The following commands are available:**
-
-| Command                          |    Type     | Description                                     |
-| -------------------------------- | :---------: | ----------------------------------------------- |
-| `npm run test`                   |    unit     | Run all unit tests                              |
-| `npm run test:watch`             |    unit     | Watching mode from unit test                    |
-| `npm run coverage`               |    unit     | Creates a coverage report from unit test        |
-| `npm run test:integration`       | integration | Run all integration tests                       |
-| `npm run test:integration:watch` | integration | Watching mode from integration test             |
-| `npm run coverage:integration`   | integration | Creates a coverage report from integration test |
-| `npm run test:functional`        | functional  | Run all functional tests                        |
-| `npm run test:functional:watch`  | functional  | Watching mode from functional test              |
-| `npm run coverage:functional`    | functional  | Creates a coverage report from functional test  |
+  Watching mode from test
 
 ## Prettier and Lint
 
