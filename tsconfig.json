@@ -11,7 +11,7 @@
     "declaration": true,
     "sourceMap": false,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
 
     /* Strict Type-Checking Options */
     "strict": true,
