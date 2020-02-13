@@ -46,7 +46,7 @@
       }
     }
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "jest"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "formatjs", "jest"],
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
     "camelcase": "error",
@@ -115,14 +115,27 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }],
     "import/no-unresolved": "error",
     "import/no-unused-modules": ["error", { "unusedExports": true, "missingExports": true }],
-    "import/order": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "unknown"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        //"pathGroups": [{ "pattern": "#*/**", "group": "internal" }]
+      }
+    ],
 
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
 
     "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+
+    "formatjs/enforce-description": "off",
+    "formatjs/enforce-placeholders": "error",
+    "formatjs/enforce-plural-rules": "error",
+    "formatjs/no-emoji": "error",
+    "formatjs/no-offset": "error"
   },
   "overrides": [
     {
