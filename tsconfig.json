@@ -10,7 +10,8 @@
     "jsx": "react",
     "declaration": true,
     "sourceMap": false,
-    "isolatedModules": true,
+    /* with Babel 7+ => true  */
+    "isolatedModules": false,
     "noEmit": false,
 
     /* Strict Type-Checking Options */
